@@ -1,0 +1,10 @@
+{
+  "description": "This web application allows users to manage and organize articles with automated summaries and tagging, enhancing content discovery and curation.",
+  "robots": {
+    "index": false
+  },
+  "accessibility": {
+    "addBypassLinks": false,
+    "ignoreReducedMotion": false
+  }
+}

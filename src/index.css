@@ -1,0 +1,111 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Noto+Sans+SC:wght@400;500;700&family=Noto+Serif+SC:wght@500;600&family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600&family=JetBrains+Mono:wght@400&display=swap');
+@import 'tailwindcss';
+
+@theme {
+  --font-sans: 'DM Sans', 'Noto Sans SC', system-ui, sans-serif;
+  --font-serif: 'Source Serif 4', 'Noto Serif SC', Georgia, serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+  --color-g-blue: #0b57d0;
+  --color-g-blue-dark: #0842a0;
+  --color-g-tint: #e8eef7;
+  --color-g-text: #1f1f1f;
+  --color-g-ink: #3c4043;
+  --color-g-sub: #5e6165;
+  --color-g-mute: #9aa0a6;
+  --color-g-line: #e1e3e6;
+  --color-g-surface: #f0f4f9;
+  --color-g-paper: #f8fafd;
+  --color-g-green: #1e6b3a;
+  --color-g-ok: #34a853;
+  --color-g-red: #b3261e;
+  --color-g-danger-bg: #fce8e6;
+  --color-g-danger-ink: #7a1b15;
+  --color-g-amber: #f9ab00;
+  --color-g-warn: #b06000;
+  --color-g-warn-ink: #8a5a00;
+  --color-g-warn-bg: #fdf6e7;
+  --color-g-warn-line: #f1dfb3;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  font-family: var(--font-sans);
+  color: var(--color-g-text);
+  background: var(--color-g-paper);
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2 {
+  font-family: var(--font-serif);
+  letter-spacing: -0.01em;
+}
+
+::selection {
+  background: #c7d9f5;
+}
+
+.scroll-quiet {
+  scrollbar-width: none;
+}
+.scroll-quiet:hover {
+  scrollbar-width: thin;
+  scrollbar-color: #d3d6da transparent;
+}
+.scroll-quiet::-webkit-scrollbar {
+  width: 0;
+}
+.scroll-quiet:hover::-webkit-scrollbar {
+  width: 8px;
+}
+.scroll-quiet::-webkit-scrollbar-thumb {
+  background: #d3d6da;
+  border-radius: 8px;
+}
+
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+a:focus-visible {
+  outline: 2px solid #0b57d0;
+  outline-offset: 2px;
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+.rise {
+  animation: rise 0.5s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+}
+@keyframes slide-in {
+  from {
+    transform: translateX(24px);
+    opacity: 0;
+  }
+  to {
+    transform: none;
+    opacity: 1;
+  }
+}
+.slide-in {
+  animation: slide-in 0.28s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .rise,
+  .slide-in {
+    animation: none;
+  }
+}
